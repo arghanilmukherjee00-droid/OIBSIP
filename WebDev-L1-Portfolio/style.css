@@ -1,0 +1,607 @@
+/* =========================================================
+   Arghanil Mukherjee – Portfolio – style.css
+   ========================================================= */
+
+/* ---------- 1. Theme colours (dark is the default) ---------- */
+:root {
+  --bg: #0f1221;
+  --bg-alt: #151a2e;
+  --card: #1b2138;
+  --border: #2a3152;
+  --text: #e6e8f2;
+  --text-muted: #9aa0bd;
+  --accent: #5eead4;        /* teal */
+  --accent-2: #818cf8;      /* indigo */
+  --on-accent: #0f1221;
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --radius: 14px;
+  --nav-height: 70px;
+}
+
+/* Light theme – switched on by script.js */
+[data-theme="light"] {
+  --bg: #f7f8fc;
+  --bg-alt: #eceff8;
+  --card: #ffffff;
+  --border: #dde1ef;
+  --text: #1a1d2e;
+  --text-muted: #5a6080;
+  --accent: #0d9488;
+  --accent-2: #4f46e5;
+  --on-accent: #ffffff;
+}
+
+/* ---------- 2. Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;           /* smooth scroll between sections */
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--bg);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+section,
+header {
+  scroll-margin-top: var(--nav-height);
+}
+
+/* ---------- 3. Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-alt {
+  background-color: var(--bg-alt);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem;
+  margin-bottom: 48px;
+}
+
+.section-title span {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.section-title::after {
+  content: "";
+  flex: 1;
+  max-width: 260px;
+  height: 1px;
+  background-color: var(--border);
+}
+
+.section-title.center {
+  justify-content: center;
+}
+
+.section-title.center::after {
+  display: none;
+}
+
+/* ---------- 4. Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 13px 28px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  transition: transform 0.25s, background-color 0.25s, color 0.25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: var(--on-accent);
+}
+
+/* ---------- 5. Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--nav-height);
+  gap: 20px;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.25s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle,
+.menu-toggle {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--card);
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.menu-toggle {
+  display: none;               /* only shown on mobile */
+}
+
+/* ---------- 6. Hero ---------- */
+.hero {
+  padding: 110px 0 120px;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hello {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.hero h1 {
+  font-size: 3.4rem;
+  margin-bottom: 12px;
+}
+
+.role {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.role span {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-desc {
+  max-width: 520px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.avatar-wrap {
+  flex-shrink: 0;
+  padding: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 6px solid var(--bg);
+  background-color: var(--card);
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--accent);
+  object-fit: cover;           /* keeps a real photo from stretching */
+}
+
+/* ---------- 7. About ---------- */
+.about-inner {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.about-text strong {
+  color: var(--text);
+}
+
+.about-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--card);
+}
+
+.about-facts li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ---------- 8. Skills (CSS Grid) ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.skill-group {
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--card);
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.skill-group:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.skill-group h3 {
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+  color: var(--accent);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-list li {
+  padding: 6px 14px;
+  border-radius: 50px;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+/* ---------- 9. Projects ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--card);
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-2);
+}
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.project-icon {
+  font-size: 2rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 16px;
+}
+
+.project-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  flex: 1;                     /* pushes tags to the bottom */
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags li {
+  font-size: 0.8rem;
+  color: var(--accent-2);
+  font-weight: 500;
+}
+
+.tags li:not(:last-child)::after {
+  content: " ·";
+  color: var(--text-muted);
+}
+
+.tags .soon {
+  padding: 0 8px;
+  border-radius: 4px;
+  background-color: var(--accent-2);
+  color: var(--on-accent);
+}
+
+/* ---------- 10. Contact ---------- */
+.contact-inner {
+  text-align: center;
+}
+
+.contact-text {
+  max-width: 520px;
+  margin: 0 auto 32px;
+  color: var(--text-muted);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 44px;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  background-color: var(--card);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.contact-links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.contact-links svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* ---------- 11. Footer ---------- */
+.footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ---------- 12. Responsive: tablet ---------- */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .avatar {
+    width: 200px;
+    height: 200px;
+    font-size: 4rem;
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* ---------- 13. Responsive: mobile ---------- */
+@media (max-width: 640px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Dropdown menu (opened by script.js) */
+  .nav-links {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 24px 0;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero {
+    padding: 70px 0 80px;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .role {
+    font-size: 1.15rem;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
