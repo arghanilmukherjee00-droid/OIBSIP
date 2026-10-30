@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <meta name="description" content="Convert temperatures between Celsius, Fahrenheit and Kelvin instantly.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="converter">
+    <header class="converter-header">
+      <span class="icon" aria-hidden="true">🌡️</span>
+      <h1>Temperature Converter</h1>
+      <p>Convert between Celsius, Fahrenheit and Kelvin in one click.</p>
+    </header>
+
+    <!-- novalidate: we show our own friendly error messages in JavaScript -->
+    <form id="converterForm" novalidate>
+
+      <!-- 1. Temperature value -->
+      <label for="tempInput" class="label">Temperature value</label>
+      <input
+        type="text"
+        id="tempInput"
+        class="temp-input"
+        placeholder="e.g. 37"
+        inputmode="decimal"
+        autocomplete="off"
+        aria-describedby="errorMsg"
+      >
+      <p class="error" id="errorMsg" role="alert"></p>
+
+      <!-- 2. Input unit (radio buttons) -->
+      <fieldset class="units">
+        <legend class="label">Convert from</legend>
+
+        <label class="unit-option">
+          <input type="radio" name="unit" value="C" checked>
+          <span>Celsius (°C)</span>
+        </label>
+        <label class="unit-option">
+          <input type="radio" name="unit" value="F">
+          <span>Fahrenheit (°F)</span>
+        </label>
+        <label class="unit-option">
+          <input type="radio" name="unit" value="K">
+          <span>Kelvin (K)</span>
+        </label>
+      </fieldset>
+
+      <!-- 3. Convert button -->
+      <div class="actions">
+        <button type="submit" class="btn">Convert</button>
+        <button type="button" class="btn btn-ghost" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <!-- 4. Results: all three units shown together -->
+    <section class="results" aria-live="polite">
+      <h2 class="label">Result</h2>
+      <div class="result-grid">
+        <div class="result-card" id="cardC">
+          <span class="result-unit">Celsius</span>
+          <span class="result-value" id="resultC">--</span>
+        </div>
+        <div class="result-card" id="cardF">
+          <span class="result-unit">Fahrenheit</span>
+          <span class="result-value" id="resultF">--</span>
+        </div>
+        <div class="result-card" id="cardK">
+          <span class="result-unit">Kelvin</span>
+          <span class="result-value" id="resultK">--</span>
+        </div>
+      </div>
+      <p class="feel" id="feelMsg">Enter a value and press Convert.</p>
+    </section>
+
+    <footer class="converter-footer">
+      Made by <strong>Arghanil Mukherjee</strong> · Oasis Infobyte Internship
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

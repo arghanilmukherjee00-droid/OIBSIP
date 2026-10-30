@@ -1,0 +1,274 @@
+/* =========================================================
+   Temperature Converter – style.css
+   ========================================================= */
+
+:root {
+  --bg: #0f1221;
+  --card: #1b2138;
+  --card-2: #151a2e;
+  --border: #2a3152;
+  --text: #e6e8f2;
+  --text-muted: #9aa0bd;
+  --accent: #5eead4;
+  --accent-2: #818cf8;
+  --on-accent: #0f1221;
+  --error: #f87171;
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --radius: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;                 /* centres the card on the page */
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(94, 234, 212, 0.12), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(129, 140, 248, 0.14), transparent 40%),
+    var(--bg);
+}
+
+/* ---------- Card ---------- */
+.converter {
+  width: 100%;
+  max-width: 520px;
+  padding: 36px 32px 28px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background-color: var(--card);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.converter-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.icon {
+  font-size: 2.6rem;
+}
+
+.converter-header h1 {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  margin: 6px 0 4px;
+}
+
+.converter-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Labels ---------- */
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ---------- Input ---------- */
+.temp-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--card-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.2rem;
+  transition: border-color 0.2s;
+}
+
+.temp-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.temp-input.invalid {
+  border-color: var(--error);
+}
+
+.error {
+  min-height: 1.5em;             /* keeps layout from jumping */
+  margin: 6px 0 14px;
+  font-size: 0.88rem;
+  color: var(--error);
+}
+
+/* ---------- Unit radio buttons ---------- */
+.units {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border: none;
+  margin-bottom: 24px;
+}
+
+.units legend {
+  grid-column: 1 / -1;
+}
+
+.unit-option {
+  position: relative;
+  cursor: pointer;
+}
+
+/* hide the default circle, style the label instead */
+.unit-option input {
+  position: absolute;
+  opacity: 0;
+}
+
+.unit-option span {
+  display: block;
+  padding: 12px 6px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--card-2);
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.unit-option:hover span {
+  border-color: var(--accent-2);
+}
+
+.unit-option input:checked + span {
+  border-color: var(--accent);
+  background-color: rgba(94, 234, 212, 0.12);
+  color: var(--accent);
+}
+
+.unit-option input:focus-visible + span {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+/* ---------- Buttons ---------- */
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  background-color: var(--accent);
+  color: var(--on-accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  flex: 0 0 110px;
+  background-color: transparent;
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+/* ---------- Results ---------- */
+.results {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 8px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--card-2);
+  text-align: center;
+}
+
+/* the unit the user typed in gets a softer look */
+.result-card.is-source {
+  opacity: 0.55;
+}
+
+.result-unit {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.result-value {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.feel {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.converter-footer {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .converter {
+    padding: 28px 20px 22px;
+  }
+
+  .converter-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .units,
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-card {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14px 18px;
+  }
+}
