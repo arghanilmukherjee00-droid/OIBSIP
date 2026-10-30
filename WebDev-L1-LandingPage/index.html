@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyNest – Your Notes & Study Planner</title>
+  <meta name="description" content="StudyNest helps students organise notes, plan study sessions and never miss a deadline.">
+
+  <!-- Google Fonts: Poppins (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR (sticky) ========== -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">📚 Study<span>Nest</span></a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How it Works</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#get-started" class="btn btn-small">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="home">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="badge">✨ Built for students</span>
+        <h1>All your notes and study plans, in <span class="highlight">one cosy nest.</span></h1>
+        <p class="subheadline">
+          StudyNest keeps your notes organised by subject, turns your syllabus into a daily
+          study plan, and reminds you before every exam — so you study smarter, not longer.
+        </p>
+        <div class="hero-buttons">
+          <a href="#get-started" class="btn">Start for Free</a>
+          <a href="#features" class="btn btn-outline">See Features</a>
+        </div>
+        <p class="hero-note">No credit card needed · Free forever for students</p>
+      </div>
+
+      <!-- Mock planner card (pure HTML/CSS, no image needed) -->
+      <div class="hero-card" aria-hidden="true">
+        <div class="card-header">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="card-title">Today's Plan</span>
+        </div>
+        <ul class="plan-list">
+          <li class="done"><span class="check">✓</span> DBMS – Normalisation notes</li>
+          <li class="done"><span class="check">✓</span> DSA – 3 array problems</li>
+          <li><span class="check"></span> Computer Networks – OSI revision</li>
+          <li><span class="check"></span> Maths – Practice set 4</li>
+        </ul>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <p class="progress-label">2 of 4 tasks done · 50%</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="section-title">Everything you need to ace your semester</h2>
+      <p class="section-subtitle">Simple tools that fit the way students actually study.</p>
+
+      <div class="features-grid">
+        <article class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>Smart Notes</h3>
+          <p>Write, highlight and organise notes by subject and unit. Find anything in seconds with quick search.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Study Planner</h3>
+          <p>Add your syllabus and exam dates — StudyNest splits it into a realistic day-by-day plan.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">⏰</div>
+          <h3>Exam Reminders</h3>
+          <p>Get gentle nudges before assignments and exams so nothing sneaks up on you.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Progress Tracking</h3>
+          <p>See how much of each subject you have covered and stay motivated with weekly streaks.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="section section-alt" id="how">
+    <div class="container">
+      <h2 class="section-title">Get organised in 3 easy steps</h2>
+      <p class="section-subtitle">From messy notebooks to a clear plan in under five minutes.</p>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <h3>Add your subjects</h3>
+          <p>Create a space for each subject this semester.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <h3>Set your exam dates</h3>
+          <p>Tell StudyNest when your exams and deadlines are.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <h3>Follow your daily plan</h3>
+          <p>Open the app each day and tick off your tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Students love StudyNest</h2>
+      <p class="section-subtitle">Sample feedback from our early users.</p>
+
+      <div class="testimonial-grid">
+        <blockquote class="testimonial">
+          <p>"I finally stopped losing my notes across five different apps. Everything is in one place now."</p>
+          <footer><strong>Riya S.</strong> · B.Tech CSE</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>"The study planner broke my whole syllabus into small daily tasks. Exams felt so much less scary."</p>
+          <footer><strong>Arjun M.</strong> · B.Sc Physics</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>"Reminders saved me from missing two assignment deadlines this month alone!"</p>
+          <footer><strong>Sneha D.</strong> · BCA</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CALL TO ACTION ========== -->
+  <section class="cta" id="get-started">
+    <div class="container cta-inner">
+      <h2>Ready to build your study nest?</h2>
+      <p>Join students who plan smarter and stress less.</p>
+      <a href="#home" class="btn btn-light">Create Free Account</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a href="#home" class="logo logo-light">📚 Study<span>Nest</span></a>
+        <p>Your notes and study planner, all in one place.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@studynest.app">hello@studynest.app</a></li>
+          <li><a href="tel:+910000000000">+91 00000 00000</a></li>
+          <li>Kolkata, India</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul class="social-links">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">X (Twitter)</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2026 StudyNest. Made for the Oasis Infobyte internship.</p>
+  </footer>
+
+</body>
+</html>
