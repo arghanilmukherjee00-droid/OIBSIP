@@ -5,7 +5,7 @@
 A simple web tool that converts a temperature between **Celsius, Fahrenheit and Kelvin**. It shows all three units at once and checks the input before converting.
 
 ## 🔗 Live Demo
-_https://arghanilmukherjee00-droid.github.io/OIBSIP/WebDev-L1-TemperatureConverter/_
+_https://github.com/arghanilmukherjee00-droid/OIBSIP/tree/main/WebDev-L1-TemperatureConverter_
 
 ## 🛠️ Tech Stack
 - HTML5
