@@ -5,7 +5,7 @@
 My personal portfolio website. It shows my profile, skills and projects, and how to contact me. It works on desktop and mobile and has a light/dark theme toggle.
 
 ## 🔗 Live Demo
-_Add your GitHub Pages link here_
+_https://github.com/arghanilmukherjee00-droid/OIBSIP/tree/main/WebDev-L1-Portfolio_
 
 ## 🛠️ Tech Stack
 - HTML5 (semantic layout)

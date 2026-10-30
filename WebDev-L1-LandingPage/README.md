@@ -5,7 +5,7 @@
 A responsive static landing page for **StudyNest**, a made-up notes and study-planner app for students. It is built with HTML5 and CSS3 only, with no JavaScript.
 
 ## 🔗 Live Demo
-_Add your GitHub Pages link here_
+_https://github.com/arghanilmukherjee00-droid/OIBSIP/tree/main/WebDev-L1-LandingPage_
 
 ## 🛠️ Tech Stack
 - HTML5 (semantic tags: `nav`, `header`, `section`, `article`, `footer`)
